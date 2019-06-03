@@ -12,7 +12,7 @@ import uuid from "uuid";
 
 export default {
   name: "Search",
-  date() {
+  data() {
     return {
       word: ""
     };

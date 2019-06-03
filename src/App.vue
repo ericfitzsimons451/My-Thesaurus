@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <Search v-on:searchThesaurus="searchThesaurus"/>
-
-    <Synonyms v-bind:currentSearch="currentSearch" />
+    <Search v-on:searchThesaurus="searchThesaurus" />
+    <Synonyms v-bind:currentSearch="this.currentSearch" />
   </div>
 </template>
 
@@ -30,8 +29,16 @@ export default {
       const response = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${apiKey}`)
       const results = await response.json()
-      this.currentSearch = await results
-      console.log(this.currentSearch[0].shortdef[0])
+      this.cleanResults(results)
+    },
+    cleanResults(results) {
+      let toReturn = {
+        shortDef: results[0].shortdef[0],
+        synonyms: results[0].meta.syns[0],
+        antonyms: results[0].meta.ants
+
+      }
+      this.currentSearch = toReturn
     }
   }
 }

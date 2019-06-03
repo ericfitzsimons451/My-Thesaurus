@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div v-bind:key="synonym.id" v-for="synonym in currentSearch">
-      <h1>{{synonym.meta.syns[0]}}</h1>
+    <div v-bind:key="synonym.id" v-for="synonym in synonymObject">
+      <Synonym v-bind:synonym="synonym"/>
     </div>
   </div>
 </template>
 
 <script>
+import Synonym from './Synonym.vue'
 
 export default {
   name: 'synonyms',
+  components: {
+    Synonym
+  },
   data() {
     return {
-      currentSearch: currentSearch
+      synonymObject: []
     }
   },
   props: ["currentSearch"]

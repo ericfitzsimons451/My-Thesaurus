@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="title-icon">
     <h1>My Thesaurus</h1>
     <h2 class="prompt">Where would you like to take your vocabulary today?</h2>
   </div>
@@ -7,12 +7,12 @@
 
 <script>
 export default {
-  name: "header"
+  name: "title-icon"
 };
 </script>
 
 <style scoped>
-.header {
+.title-icon {
   text-align: center;
   padding: 10px;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -25,7 +25,7 @@ export default {
   align-items: center;
 }
 
-.header h1 {
+.title-icon h1 {
   color: #333;
   font-family: "Pacifico", cursive;
   font-size: 3rem;
