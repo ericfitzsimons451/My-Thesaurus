@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-bind:key="synonym.id" v-for="synonym in synonymObject">
+    <h2>{{`You typed the word ${this.$attrs.synonymObject.word}`}}</h2>
+    <div v-bind:key="synonym.id" v-for="synonym in this.$attrs.synonymObject.synonyms">
       <Synonym v-bind:synonym="synonym"/>
     </div>
   </div>
@@ -16,7 +17,7 @@ export default {
   },
   data() {
     return {
-      synonymObject: []
+      synonymObject: {}
     }
   },
   props: ["currentSearch"]

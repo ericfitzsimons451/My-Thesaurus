@@ -1,8 +1,9 @@
 <template>
   <div>
     <form @submit="searchThesaurus">
-      <input type="text" v-model="word" name="word" placeholder="Type a word here...">
+      <input type="text" v-model="word" name="word" placeholder="ex: Verbose">
       <input type="submit" value="Submit" class="submit-btn">
+      <p>{{this.word}}</p>
     </form>
   </div>
 </template>

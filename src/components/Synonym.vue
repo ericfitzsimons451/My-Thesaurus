@@ -1,17 +1,12 @@
 <template>
   <div>
-    <h2></h2>
+    <h2>{{synonym}}</h2>
   </div>
 </template>
 
 <script>
 export default {
   name: "synonym",
-  props: ["synonym"],
-  data() {
-    return {
-      synonym: synonym
-    }
-  }
+  props: ["synonym"]
 }
 </script>

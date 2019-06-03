@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <Search v-on:searchThesaurus="searchThesaurus" />
-    <Synonyms v-bind:currentSearch="this.currentSearch" />
+    <Synonyms v-bind:synonymObject="this.currentSearch" />
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      currentSearch: []
+      currentSearch: {}
     }
   },
   methods: {
@@ -29,14 +29,14 @@ export default {
       const response = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${apiKey}`)
       const results = await response.json()
-      this.cleanResults(results)
+      this.cleanResults(results, word)
     },
-    cleanResults(results) {
+    cleanResults(results, word) {
       let toReturn = {
-        shortDef: results[0].shortdef[0],
-        synonyms: results[0].meta.syns[0],
-        antonyms: results[0].meta.ants
-
+        word: word,
+        shortDef: results[0].shortdef[0] || null,
+        synonyms: results[0].meta.syns[0] || null,
+        antonyms: results[0].meta.ants[0] || null
       }
       this.currentSearch = toReturn
     }
