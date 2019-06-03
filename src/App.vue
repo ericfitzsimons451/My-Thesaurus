@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     async searchThesaurus(word) {
-
       const response = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${apiKey}`)
       const results = await response.json()
