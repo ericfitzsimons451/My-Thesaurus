@@ -12,8 +12,6 @@
         <Synonym v-bind:synonym="synonym" class="synonym"/>
       </div>
     </section>
-
-    <div></div>
   </div>
 </template>
 
@@ -50,6 +48,8 @@ export default {
 
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   min-width: 100vw;
 }
 

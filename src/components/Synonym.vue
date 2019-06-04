@@ -11,11 +11,14 @@ export default {
   methods: {
     searchAgain(e) {
       e.preventDefault()
-      this.$attrs.synonymObject.synonyms.find(synonym => {
-        if (e.target.innerText === synonym) {
-          this.$emit("searchAgain", synonym)
-        }
-      })
+ 
+      // this.$attrs.synonymObject.synonyms.find(synonym => {
+      // console.log(synonym)
+      //   if (e.target.innerText === synonym) {
+      //     this.$emit("searchAgain", synonym)
+      //     console.log(synonym)
+      //   }
+      // })
     }
   }
 }
