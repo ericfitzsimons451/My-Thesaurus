@@ -49,7 +49,8 @@ export default {
 
 <style>
 #app {
-  background-color: #e0d0c1;
+  background-color: #004d3e;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

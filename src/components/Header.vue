@@ -26,15 +26,15 @@ export default {
 }
 
 .title-icon h1 {
-  color: #333;
+  color: #00294D;
   font-family: "Pacifico", cursive;
   font-size: 3rem;
   background: #a76d60;
   width: 30vw;
   border-radius: 15px;
   padding: 1rem;
-    text-shadow: .5px .5px .5px #000, 1px 1px 2px white;
-
+  text-shadow: .5px .5px .5px #000, 1px 1px 2px white;
+  box-shadow: .5px .5px .5px #000, 1px 1px 2px white;
 }
 
 .prompt {
