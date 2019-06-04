@@ -9,7 +9,7 @@
         v-bind:key="synonym.id"
         v-for="synonym in this.$attrs.synonymObject.synonyms"
       >
-        <Synonym v-bind:synonym="synonym" class="synonym"/>
+        <Synonym v-bind:synonym="synonym" v-on:searchThesaurus="$emit('searchThesaurus', synonym)" class="synonym"/>
       </div>
     </section>
   </div>

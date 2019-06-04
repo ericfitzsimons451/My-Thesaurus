@@ -3,7 +3,7 @@
     <div id="app">
       <Header class="head" />
       <Search v-on:searchThesaurus="searchThesaurus"/>
-      <Synonyms v-bind:synonymObject="this.currentSearch"/>
+      <Synonyms v-bind:synonymObject="this.currentSearch" v-on:searchThesaurus="searchThesaurus"/>
     </div>
   </div>
 </template>
@@ -42,6 +42,9 @@ export default {
         antonyms: results[0].meta.ants[0] || null
       };
       this.currentSearch = toReturn;
+    },
+    searchAgain(word) {
+      event.preventDefault()
     }
   }
 };
