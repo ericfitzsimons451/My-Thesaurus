@@ -3,7 +3,6 @@
     <form @submit="searchThesaurus">
       <input type="text" v-model="word" name="word" placeholder="ex: Verbose">
       <input type="submit" value="Submit" class="submit-btn">
-      <p>{{this.word}}</p>
     </form>
   </div>
 </template>
@@ -27,3 +26,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .submit-btn {
+    padding: 15px;
+  }
+</style>
+

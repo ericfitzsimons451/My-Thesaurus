@@ -32,10 +32,14 @@ export default {
   background: #a76d60;
   width: 30vw;
   border-radius: 15px;
+  padding: 1rem;
+    text-shadow: .5px .5px .5px #000, 1px 1px 2px white;
+
 }
 
 .prompt {
   color: #333;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px #601700;
+  margin: 2rem;
 }
 </style>
