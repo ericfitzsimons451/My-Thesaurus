@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit="searchThesaurus">
-      <input type="text" v-model="word" name="word" placeholder="Type a word here...">
+      <input type="text" v-model="word" name="word" placeholder="ex: Verbose">
       <input type="submit" value="Submit" class="submit-btn">
     </form>
   </div>
@@ -12,7 +12,7 @@ import uuid from "uuid";
 
 export default {
   name: "Search",
-  date() {
+  data() {
     return {
       word: ""
     };
@@ -26,3 +26,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .submit-btn {
+    padding: 15px;
+  }
+</style>
+
