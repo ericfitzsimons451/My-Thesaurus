@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <form @submit="searchThesaurus">
-      <input type="text" v-model="word" name="word" placeholder="ex: Verbose">
+  <div class="search">
+    <form @submit="searchThesaurus" class="form">
+      <input type="text" v-model="word" name="word" placeholder="ex: Verbose" class="input">
       <input type="submit" value="Submit" class="submit-btn">
     </form>
   </div>
@@ -28,8 +28,27 @@ export default {
 </script>
 
 <style scoped>
+  .search {
+    border: 0px solid;
+  }
+
+  .form {
+    background-color: #004d3e;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    display: flex;
+    justify-content: center;
+  }
   .submit-btn {
-    padding: 15px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .input {
+    margin: 10px;
+    height: 2rem;
+    font-size: 2rem;
+    width: 20vw;
+    padding: .7rem;
   }
 </style>
 
