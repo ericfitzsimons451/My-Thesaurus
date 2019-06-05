@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 v-if="this.$attrs.synonymObject.word">{{`You searched: ${this.$attrs.synonymObject.word}`}}</h2>
+    <h2 v-if="this.$attrs.synonymObject.word">{{`Your last successful search: ${this.$attrs.synonymObject.word}`}}</h2>
     <h2 class="definition"
       v-if="this.$attrs.synonymObject.word"
     >{{`Definition: ${this.$attrs.synonymObject.shortDef}`}}</h2>
@@ -9,7 +9,7 @@
         v-bind:key="synonym.id"
         v-for="synonym in this.$attrs.synonymObject.synonyms"
       >
-        <Synonym v-bind:synonym="synonym" class="synonym"/>
+        <Synonym v-bind:synonym="synonym" v-on:searchThesaurus="$emit('searchThesaurus', synonym)" class="synonym"/>
       </div>
     </section>
   </div>

@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div id="app">
+    <div id="app" >
       <Header class="head" />
       <Search v-on:searchThesaurus="searchThesaurus"/>
-      <Synonyms v-bind:synonymObject="this.currentSearch"/>
+      <h1 v-if="(this.noResult === true)">No results found.</h1>
+      <Synonyms v-bind:synonymObject="this.currentSearch" v-on:searchThesaurus="searchThesaurus"/>
     </div>
   </div>
 </template>
@@ -19,20 +20,32 @@ export default {
   components: {
     Header,
     Search,
-    Synonyms
+    Synonyms,
   },
   data() {
     return {
-      currentSearch: {}
+      searchedWord: '',
+      currentSearch: {},
+      suggestions: [],
+      noResult: false
     };
   },
   methods: {
     async searchThesaurus(word) {
+      this.searchedWord = word
       const response = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${apiKey}`
       );
       const results = await response.json();
-      this.cleanResults(results, word);
+      if (typeof results[0] === 'string') {
+        this.noResult = false
+        this.suggestions = results
+      } else if (!results.length) {
+        this.noResult = true
+      } else {
+        this.noResult = false
+        this.cleanResults(results, word);
+      }
     },
     cleanResults(results, word) {
       let toReturn = {
@@ -68,15 +81,6 @@ export default {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-}
-
-.btn {
-  display: inline-block;
-  border: none;
-  background: #555;
-  color: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
 }
 
 .bookshelf {
