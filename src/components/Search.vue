@@ -39,12 +39,13 @@ export default {
   .submit-btn {
     padding: 12px;
     border-radius: 15px;
+    cursor: pointer;
   }
 
   .input {
     margin: 10px;
     height: 2rem;
-    font-size: 2rem;
+    font-size: 1.3rem;
     width: 20vw;
     padding: .7rem;
   }

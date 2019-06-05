@@ -18,6 +18,7 @@ button {
   margin: 0.2rem;
   font-size: 2rem;
   padding: 1rem;
+  cursor: pointer;
 }
 </style>
 
