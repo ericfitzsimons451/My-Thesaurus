@@ -15,7 +15,7 @@
 ### This was our final project as Front-End students at Turing School of Software and Design.  We were given 5 days to create an application using Vue, a completely new framework.  Designed to mimic an at-home code challenge given as part of a job-interview, students had to adapt from our largely React-based background to a similar, yet different, framework.  
 
 ## Deployed Site
-```http://my-first-thesaurus.surge.sh/```
+http://my-first-thesaurus.surge.sh/
 
 ## Tech Stack
 
